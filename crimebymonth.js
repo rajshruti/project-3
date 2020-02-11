@@ -1,13 +1,13 @@
 // Define SVG area dimensions
-var svgWidth = 960;
-var svgHeight = 660;
+var svgWidth = 800;
+var svgHeight = 500;
 
 // Define the chart's margins as an object
 var chartMargin = {
   top: 30,
   right: 30,
   bottom: 30,
-  left: 30
+  left: 40
 };
 
 // Define dimensions of the chart area
@@ -26,8 +26,7 @@ var chartGroup = svg.append("g")
   
 // Load data from crimecount.csv
 d3.csv("crimecount.csv", function(data){
-
-
+	
  // Configure a band scale for the horizontal axis with a padding of 0.1 (10%)
   var xBandScale = d3.scaleBand()
     .domain(data.map(d => d.occurrencemonth))
