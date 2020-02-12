@@ -1,31 +1,3 @@
-// var svgWidth = 960;
-// var svgHeight = 500;
-
-// var margin = {
-//   top: 20,
-//   right: 40,
-//   bottom: 60,
-//   left: 50
-// };
-
-// var width = svgWidth - margin.left - margin.right;
-// var height = svgHeight - margin.top - margin.bottom;
-
-// var svg = d3
-//   .select("body")
-//   .append("svg")
-//   .attr("width", svgWidth)
-//   .attr("height", svgHeight);
-
-// var chartGroup = svg.append("g")
-//   .attr("transform", `translate(${margin.left}, ${margin.top})`);
-// //console.log("hi")
-
-// -------------------------------------------------------------------
-
-//const svg = d3.select('svg');
-//const svgContainer = d3.select('#container');
-    
 const margin = 80;
 const width = 1000 - 2 * margin;
 const height = 600 - 2 * margin;
@@ -65,12 +37,7 @@ d3.csv("cleaned_dataframe.csv").then(function(data){
         
         })
 
-      // console.log(Assault);
-      // console.log(Auto_Theft);
-      // console.log(Break_and_Enter);
-      // console.log(Robbery);
-      // console.log(Theft_Over);
-      
+    
       const histogram = [
         {
           crime: 'Assault',
@@ -109,11 +76,7 @@ d3.csv("cleaned_dataframe.csv").then(function(data){
       .range([height, 0])
       .domain([0, 100000]);
 
-    // vertical grid lines
-    // const makeXLines = () => d3.axisBottom()
-    //   .scale(xScale)
-
-    const makeYLines = () => d3.axisLeft()
+     const makeYLines = () => d3.axisLeft()
       .scale(yScale)
 
     chartGroup.append('g')
@@ -123,14 +86,6 @@ d3.csv("cleaned_dataframe.csv").then(function(data){
     chartGroup.append('g')
       .call(d3.axisLeft(yScale));
 
-    // vertical grid lines
-    // chartGroup.append('g')
-    //   .attr('class', 'grid')
-    //   .attr('transform', `translate(0, ${height})`)
-    //   .call(makeXLines()
-    //     .tickSize(-height, 0, 0)
-    //     .tickFormat('')
-    //   )
     chartGroup.append('g')
       .attr('class', 'grid')
       .call(makeYLines()
