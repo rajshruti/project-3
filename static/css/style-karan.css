@@ -1,17 +1,17 @@
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open sans", sans-serif;
   }
   
-  div#layout {
+  div.chart {
     text-align: center;
   }
   
-  div#container {
-    width: 1000px;
-    height: 600px;
+  div.chart {
+    width: 1500px;
+    height: 800px;
     margin: auto;
-    background-color: #2F4A6D;
+    background-color: rgb(110, 110, 110);
   }
   
   svg {
@@ -24,12 +24,12 @@ body {
   }
 
   .bar:hover {
-    fill: rgb(125, 125, 125);
+    fill: rgb(20, 20, 20);
   }
   
   text {
-    font-size: 12px;
-    fill: rgb(10, 9, 9);
+    font-size: 16px;
+    fill: rgb(255, 255, 255);
   }
   
   path {
@@ -56,16 +56,16 @@ body {
   }
   
   text.divergence {
-    font-size: 14px;
-    fill: #2F4A6D;
+    font-size: 18px;
+    fill: rgb(0, 0, 0);
   }
   
   text.value {
-    font-size: 14px;
+    font-size: 18px;
   }
   
   text.title {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
   }
   
@@ -75,5 +75,5 @@ body {
   }
   
   text.source {
-    font-size: 10px;
+    font-size: 12px;
   }
