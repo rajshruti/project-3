@@ -1,4 +1,4 @@
-var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 Plotly.d3.csv('crime_byhour.csv', (err, rows) => {
 	
@@ -10,6 +10,10 @@ Plotly.d3.csv('crime_byhour.csv', (err, rows) => {
       x: d.map(r => r.occurrencehour),
       y: d.map(r => r.count)
     }
-  })
-  Plotly.newPlot('graph', data)
+  });
+  var layout = {
+	  title: 'Crime By Hour',
+	  xaxis: 'Hour of the day',
+  yaxis: 'Crime Count'};
+  Plotly.newPlot('graph', data, layout);
 })
