@@ -1,0 +1,21 @@
+/*body {
+  padding: 0px;
+  margin: 0px;
+}*/
+
+body {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 150%;
+  color: #333;
+  background: #B7D9F6;
+}
+
+#map,
+body,
+html {
+  height: 100%;
+}
