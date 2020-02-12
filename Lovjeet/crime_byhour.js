@@ -1,8 +1,9 @@
 var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 Plotly.d3.csv('crime_byhour.csv', (err, rows) => {
-  var data = days.map(y => {
-    var d = rows.filter(r => r.occurrencedayofweek == y)
+	
+    var data = days.map(y => {
+	var d = rows.filter(r => r.occurrencedayofweek == y)
     return {
       type: 'bar',
       name: y,
