@@ -1,34 +1,6 @@
-// var svgWidth = 960;
-// var svgHeight = 500;
-
-// var margin = {
-//   top: 20,
-//   right: 40,
-//   bottom: 60,
-//   left: 50
-// };
-
-// var width = svgWidth - margin.left - margin.right;
-// var height = svgHeight - margin.top - margin.bottom;
-
-// var svg = d3
-//   .select("body")
-//   .append("svg")
-//   .attr("width", svgWidth)
-//   .attr("height", svgHeight);
-
-// var chartGroup = svg.append("g")
-//   .attr("transform", `translate(${margin.left}, ${margin.top})`);
-// //console.log("hi")
-
-// -------------------------------------------------------------------
-
-//const svg = d3.select('svg');
-//const svgContainer = d3.select('#container');
-    
 const margin = 80;
-const width = 1450 - 2 * margin;
-const height = 630 - 2 * margin;
+const width = 1000 - 2 * margin;
+const height = 600 - 2 * margin;
 
 const svg = d3.select(".chart")
   .append("svg")
@@ -45,7 +17,9 @@ var Break_and_Enter = 0;
 var Robbery = 0;
 var Theft_Over = 0;
 
-d3.csv("../../Resources/cleaned_dataframe.csv").then(function(data){
+console.log("are you here")
+
+d3.csv("/Resources/cleaned_dataframe.csv").then(function(data){
     data.forEach(function (row){
         if (row.MCI === "Assault"){
             ++Assault;
@@ -64,13 +38,6 @@ d3.csv("../../Resources/cleaned_dataframe.csv").then(function(data){
         }
         
         })
-
-      // console.log(Assault);
-      // console.log(Auto_Theft);
-      // console.log(Break_and_Enter);
-      // console.log(Robbery);
-      // console.log(Theft_Over);
-      
       const histogram = [
         {
           crime: 'Assault',
@@ -99,7 +66,6 @@ d3.csv("../../Resources/cleaned_dataframe.csv").then(function(data){
         }
       ]
 
-
     const xScale = d3.scaleBand()
       .range([0, width])
       .domain(histogram.map((h) => h.crime))
@@ -109,9 +75,6 @@ d3.csv("../../Resources/cleaned_dataframe.csv").then(function(data){
       .range([height, 0])
       .domain([0, 100000]);
 
-    // vertical grid lines
-    // const makeXLines = () => d3.axisBottom()
-    //   .scale(xScale)
 
     const makeYLines = () => d3.axisLeft()
       .scale(yScale)
@@ -123,14 +86,6 @@ d3.csv("../../Resources/cleaned_dataframe.csv").then(function(data){
     chartGroup.append('g')
       .call(d3.axisLeft(yScale));
 
-    // vertical grid lines
-    // chartGroup.append('g')
-    //   .attr('class', 'grid')
-    //   .attr('transform', `translate(0, ${height})`)
-    //   .call(makeXLines()
-    //     .tickSize(-height, 0, 0)
-    //     .tickFormat('')
-    //   )
     chartGroup.append('g')
       .attr('class', 'grid')
       .call(makeYLines()
@@ -159,7 +114,7 @@ d3.csv("../../Resources/cleaned_dataframe.csv").then(function(data){
           .duration(300)
           .attr('opacity', 0.4)
           .attr('x', (a) => xScale(a.crime) - 5)
-          .attr('width', xScale.bandwidth() + 50)
+          .attr('width', xScale.bandwidth() + 10)
 
         const y = yScale(actual.value)
 
@@ -214,7 +169,7 @@ d3.csv("../../Resources/cleaned_dataframe.csv").then(function(data){
       .append('text')
       .attr('class', 'label')
       .attr('x', -(height / 2) - margin)
-      .attr('y', margin /6)
+      .attr('y', margin / 4)
       .attr('transform', 'rotate(-90)')
       .attr('text-anchor', 'middle')
       .text('No. of occurences')
@@ -231,11 +186,11 @@ d3.csv("../../Resources/cleaned_dataframe.csv").then(function(data){
       .attr('x', width / 2 + margin)
       .attr('y', 50)
       .attr('text-anchor', 'middle')
-      .text('Major Crime Indicators (Toronto: 2014 to 2018)')
+      .text('Major Crime Indicators - Histogram (Toronto: 2014 to 2018)')
 
     svg.append('text')
       .attr('class', 'source')
-      .attr('x', width - margin*2)
+      .attr('x', width - margin / 2)
       .attr('y', height + margin * 1.7)
       .attr('text-anchor', 'start')
       .text('Source: Toronto Police Service (Public Safety Data Portal)')
