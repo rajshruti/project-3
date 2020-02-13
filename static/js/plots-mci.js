@@ -27,8 +27,8 @@
 //const svgContainer = d3.select('#container');
     
 const margin = 80;
-const width = 1000 - 2 * margin;
-const height = 600 - 2 * margin;
+const width = 1450 - 2 * margin;
+const height = 630 - 2 * margin;
 
 const svg = d3.select(".chart")
   .append("svg")
@@ -44,8 +44,6 @@ var Auto_Theft = 0;
 var Break_and_Enter = 0;
 var Robbery = 0;
 var Theft_Over = 0;
-
-console.log("are you here")
 
 d3.csv("cleaned_dataframe.csv").then(function(data){
     data.forEach(function (row){
@@ -161,7 +159,7 @@ d3.csv("cleaned_dataframe.csv").then(function(data){
           .duration(300)
           .attr('opacity', 0.4)
           .attr('x', (a) => xScale(a.crime) - 5)
-          .attr('width', xScale.bandwidth() + 10)
+          .attr('width', xScale.bandwidth() + 50)
 
         const y = yScale(actual.value)
 
@@ -216,7 +214,7 @@ d3.csv("cleaned_dataframe.csv").then(function(data){
       .append('text')
       .attr('class', 'label')
       .attr('x', -(height / 2) - margin)
-      .attr('y', margin / 4)
+      .attr('y', margin /6)
       .attr('transform', 'rotate(-90)')
       .attr('text-anchor', 'middle')
       .text('No. of occurences')
@@ -237,7 +235,7 @@ d3.csv("cleaned_dataframe.csv").then(function(data){
 
     svg.append('text')
       .attr('class', 'source')
-      .attr('x', width - margin / 2)
+      .attr('x', width - margin*2)
       .attr('y', height + margin * 1.7)
       .attr('text-anchor', 'start')
       .text('Source: Toronto Police Service (Public Safety Data Portal)')
