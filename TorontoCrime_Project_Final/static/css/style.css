@@ -1,13 +1,8 @@
-/*body {
-  padding: 0px;
-  margin: 0px;
-}*/
-
 body {
   padding-left: 0px;
   padding-right: 0px;
   margin: 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Open Sans", Sans-serif;
   font-size: 18px;
   line-height: 150%;
   color: #333;
