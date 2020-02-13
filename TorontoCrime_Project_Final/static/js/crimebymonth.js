@@ -16,9 +16,7 @@ Plotly.d3.csv('/Resources/crimecount.csv', (err, rows) => {
 	xaxis: {title:'Month'},
 	yaxis: {title:'No. of Occurrences'},
 	paper_bgcolor: 'rgba(245,246,249,1)',
-	plot_bgcolor: 'rgba(245,246,249,1)',
-	width: 900,
-	height: 500,
+	plot_bgcolor: 'rgba(245,246,249,1)'
   };	
   Plotly.newPlot('graph', data, layout)
 });
