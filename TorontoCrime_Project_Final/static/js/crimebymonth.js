@@ -18,7 +18,7 @@ Plotly.d3.csv('/Resources/crimecount.csv', (err, rows) => {
 	paper_bgcolor: 'rgba(245,246,249,1)',
 	plot_bgcolor: 'rgba(245,246,249,1)',
 	width: 900,
-	height: 600,
+	height: 500,
   };	
   Plotly.newPlot('graph', data, layout)
 });
