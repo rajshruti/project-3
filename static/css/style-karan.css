@@ -1,0 +1,79 @@
+
+body {
+    font-family: "Open sans", sans-serif;
+  }
+  
+  div.chart {
+    text-align: center;
+  }
+  
+  div.chart {
+    width: 1500px;
+    height: 800px;
+    margin: auto;
+    background-color: rgb(110, 110, 110);
+  }
+  
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .bar {
+    fill: #80cbc4;
+  }
+
+  .bar:hover {
+    fill: rgb(20, 20, 20);
+  }
+  
+  text {
+    font-size: 16px;
+    fill: rgb(255, 255, 255);
+  }
+  
+  path {
+    stroke: gray;
+  }
+  
+  line {
+    stroke: gray;
+  }
+  
+  line#limit {
+    stroke: rgb(211, 34, 45);
+    stroke-width: 3;
+    stroke-dasharray: 3 6;
+  }
+  
+  .grid path {
+    stroke-width: 0;
+  }
+  
+  .grid .tick line {
+    stroke: #9FAAAE;
+    stroke-opacity: 0.3;
+  }
+  
+  text.divergence {
+    font-size: 18px;
+    fill: rgb(0, 0, 0);
+  }
+  
+  text.value {
+    font-size: 18px;
+  }
+  
+  text.title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  text.label {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  text.source {
+    font-size: 12px;
+  }
