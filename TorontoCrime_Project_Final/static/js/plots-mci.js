@@ -114,7 +114,7 @@ d3.csv("/Resources/cleaned_dataframe.csv").then(function(data){
           .duration(300)
           .attr('opacity', 0.4)
           .attr('x', (a) => xScale(a.crime) - 5)
-          .attr('width', xScale.bandwidth() + 10)
+          .attr('width', xScale.bandwidth() + 50)
 
         const y = yScale(actual.value)
 
@@ -169,7 +169,7 @@ d3.csv("/Resources/cleaned_dataframe.csv").then(function(data){
       .append('text')
       .attr('class', 'label')
       .attr('x', -(height / 2) - margin)
-      .attr('y', margin / 4)
+      .attr('y', margin / 6)
       .attr('transform', 'rotate(-90)')
       .attr('text-anchor', 'middle')
       .text('No. of occurences')
