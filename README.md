@@ -14,7 +14,6 @@ Toronto major crime indicator (MCI) as a database that contains all police recor
 •	Flask APIs
 •	HTML/CSS
 •	JavaScript (D3.js, Leaflet.js, Plotly.js)
-•	Heroku
 
 ### Datasets to be Used:
 We will be using datasets from Toronto Police Service Public Safety Data Portal. https://data.torontopolice.on.ca/datasets/98f7dde610b54b9081dfca80be453ac9_0/data
